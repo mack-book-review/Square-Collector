@@ -2,10 +2,12 @@ import pygame,sys
 from pygame.locals import * 
 from coin import Coin 
 
+#initialize pygame modules
 pygame.init()
 pygame.font.init() 
 FONT = pygame.font.SysFont("Helvetica",30)
 
+#create and configure global variables for size, screen, and clock
 size = (800,600)
 screen = pygame.display.set_mode(size)
 clock = pygame.time.Clock()
@@ -14,18 +16,21 @@ clock = pygame.time.Clock()
 speed_x = 0
 speed_y = 0
 
+#create global variables for player and score
 player = pygame.Rect(400,300,11,11)
 score = 0 
 
+#create global variables for color tuples
 WHITE = (255,255,255,255)
 BLACK = (0,0,0,255)
 YELLOW = (255,215,0)
 RED = (255,0,0,255)
 
-score = 0
+
 coins = [] 
 for i in range(100):
   coins.append(Coin())
+  
 #add movement functions
 def move_up():
   global speed_y 
